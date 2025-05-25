@@ -1,11 +1,135 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Métadonnées de base -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atelier Tech Mobile – MIDEESSI</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Titre et description SEO -->
+    <title>Atelier MIDEESSI - Formation Développement Web, Python, Montage Vidéo & Graphisme</title>
+    <meta name="description" content="Centre de formation MIDEESSI spécialisé en développement web, Python, montage vidéo, community management et graphisme. Formations professionnelles et certifiantes.">
+    <meta name="keywords" content="formation développement web, formation python, montage vidéo, community management, graphisme, atelier MIDEESSI, formation professionnelle, programmation">
+    <meta name="author" content="Atelier MIDEESSI - Nous smmes indépendants"> 
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ateliermideessi.onrender.com/">
+    <meta property="og:title" content="Atelier MIDEESSI - Formation Développement Web, Python & Design">
+    <meta property="og:description" content="Centre de formation spécialisé en développement web, Python, montage vidéo, community management et graphisme. Formations professionnelles.">
+    <meta property="og:image" content="https://ateliermideessi.onrender.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Atelier MIDEESSI">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ateliermideessi.onrender.com/">
+    <meta name="twitter:title" content="Atelier MIDEESSI - Centre de Formation Tech">
+    <meta name="twitter:description" content="Formations en développement web, Python, montage vidéo, community management et graphisme.">
+    <meta name="twitter:image" content="https://ateliermideessi.onrender.com/images/twitter-image.jpg">
+    
+    
+    <!-- Préchargement des polices critiques -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    
+    <!-- Styles CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    
+    <!-- Données structurées JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Atelier MIDEESSI",
+        "alternateName": "MIDEESSI", 
+        "image": "https://ateliermideessi.onrender.com/images/logo.png",
+        "description": "Centre de formation spécialisé en développement web, Python, montage vidéo, community management et graphisme. Formations professionnelles et certifiantes.",
+        "telephone": "+229 01-64-40-96-91", 
+        "email": "mideessitmp.com", 
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SN"
+        },
+        "url": "https://ateliermideessi.onrender.com",
+        "sameAs": [
+            "https://www.facebook.com/ateliermideessi",
+            "https://www.instagram.com/ateliermideessi",
+            "https://www.linkedin.com/company/ateliermideessi"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Formations disponibles",
+            "itemListElement": [
+                {
+                    "@type": "Course",
+                    "name": "Formation Développement Web",
+                    "description": "HTML, CSS, JavaScript, React, Node.js",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Atelier MIDEESSI"
+                    }
+                },
+                {
+                    "@type": "Course",
+                    "name": "Formation Python",
+                    "description": "Programmation Python, Django, Data Science",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Atelier MIDEESSI"
+                    }
+                },
+                {
+                    "@type": "Course",
+                    "name": "Formation Montage Vidéo",
+                    "description": "Adobe Premiere, After Effects, DaVinci Resolve",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Atelier MIDEESSI"
+                    }
+                },
+                {
+                    "@type": "Course",
+                    "name": "Formation Community Management",
+                    "description": "Gestion réseaux sociaux, stratégie digitale",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Atelier MIDEESSI"
+                    }
+                },
+                {
+                    "@type": "Course",
+                    "name": "Formation Graphisme",
+                    "description": "Adobe Photoshop, Illustrator, InDesign",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Atelier MIDEESSI"
+                    }
+                }
+            ]
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+229 0164-409-691", 
+            "contactType": "Informations et inscriptions",
+            "availableLanguage": ["French"] 
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "156"
+        }
+    }
+    </script>
+    
+    <!-- Configuration EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
@@ -14,6 +138,36 @@
             });
         })();
     </script>
+    
+    <!-- Analytics et suivi (à configurer selon vos besoins) -->
+    <!-- Google Analytics 4 -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
+    
+    <!-- Sécurité -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://api.emailjs.com;">
+    
+    <!-- Performance et préchargement -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//api.emailjs.com">
+    <link rel="dns-prefetch" href="//ateliermideessi.onrender.com">
+    
+    <!-- Compatible mobile et PWA -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Langue principale -->
+    <meta http-equiv="content-language" content="fr">
 </head>
 <body>
     <header>
