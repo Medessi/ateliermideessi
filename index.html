@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier Tech Mobile – MIDEESSI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "I7V_XNfCruQZvIBig",
+            });
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ATELIER TECH MOBILE – MIDEESSI</h1>
+            <p class="slogan">100 % pensé et réalisé avec un simple smartphone</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="description">
+                <h2><i class="fas fa-info-circle"></i> Description de l’atelier</h2>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>Format :</strong> En ligne (WhatsApp)</li>
+                    <li><i class="fas fa-calendar-alt"></i> <strong>Début :</strong> Juin 2025</li>
+                    <li><i class="fas fa-coins"></i> <strong>Frais :</strong> 2 000 FCFA</li>
+                    <li><i class="fas fa-certificate"></i> <strong>Certification :</strong> Symbolique MIDEESSI à la fin</li>
+                </ul>
+            </section>
+
+            <section id="countdown-section">
+                <h2><i class="fas fa-hourglass-half"></i> Ne manquez pas le début !</h2>
+                <div id="countdown-timer">
+                    <div class="timer-box">
+                        <span id="days">00</span>
+                        <p>Jours</p>
+                    </div>
+                    <div class="timer-box">
+                        <span id="hours">00</span>
+                        <p>Heures</p>
+                    </div>
+                    <div class="timer-box">
+                        <span id="minutes">00</span>
+                        <p>Minutes</p>
+                    </div>
+                    <div class="timer-box">
+                        <span id="seconds">00</span>
+                        <p>Secondes</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="inscription">
+                <h2><i class="fas fa-edit"></i> Formulaire d’inscription</h2>
+                <form id="registration-form">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required>
+
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" required>
+
+                    <label for="age">Âge :</label>
+                    <input type="number" id="age" name="age" required>
+
+                    <label for="email">Adresse email :</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="whatsapp">Numéro WhatsApp (avec indicatif pays) :</label>
+                    <input type="text" id="whatsapp" name="whatsapp" placeholder="+221XXXXXXXXX" required>
+
+                    <label for="module">Module souhaité :</label>
+                    <select id="module" name="module" required>
+                        <option value="" disabled selected>-- Choisissez un module --</option>
+                        <option value="Créer un site web (TrebEdit, HTML/CSS)">Créer un site web (TrebEdit, HTML/CSS)</option>
+                        <option value="Initiation à Python mobile (Pydroid)">Initiation à Python mobile (Pydroid)</option>
+                        <option value="Montage vidéo mobile (CapCut, InShot)">Montage vidéo mobile (CapCut, InShot)</option>
+                        <option value="Design & graphisme mobile (Canva, Pixellab, Snapseed)">Design & graphisme mobile (Canva, Pixellab, Snapseed)</option>
+                        <option value="Community management (pages, contenus, réseaux sociaux)">Community management (pages, contenus, réseaux sociaux)</option>
+                    </select>
+
+                    <label for="motivation">Pourquoi veux-tu participer ?</label>
+                    <textarea id="motivation" name="motivation" rows="5" required></textarea>
+
+                    <button type="submit" id="submit-button">Je m’inscris</button>
+                    <p id="form-message"></p>
+                </form>
+            </section>
+
+            <section id="faq">
+                <h2><i class="fas fa-question-circle"></i> Questions fréquentes (FAQ)</h2>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Quel est le prérequis pour participer ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Avoir un smartphone (Android de préférence pour certains outils) et une connexion internet. Aucune connaissance technique préalable n'est requise, juste de la motivation et l'envie d'apprendre !</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Comment se déroule l'atelier en ligne ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>L'atelier se déroulera principalement via un groupe WhatsApp dédié. Des instructions, des ressources (vidéos, textes, liens) et des exercices pratiques seront partagés. Vous pourrez poser vos questions et interagir avec les formateurs et les autres participants.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        La certification est-elle reconnue ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Il s'agit d'une certification symbolique délivrée par MIDEESSI, attestant de votre participation active et de l'acquisition des compétences de base du module choisi. Elle valorise votre engagement dans l'apprentissage des technologies mobiles et peut être un plus sur votre CV.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        Que faire si je rencontre un problème technique ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Les formateurs seront disponibles sur le groupe WhatsApp pour vous aider à résoudre les problèmes techniques courants liés aux outils et exercices de l'atelier.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <img src="mideessi_logo.png" alt="Logo MIDEESSI" id="footer-logo">
+            <p>Suivez MIDEESSI et contactez-nous :</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/MIDEESSI/" target="_blank" aria-label="Page Facebook de MIDEESSI"><i class="fab fa-facebook-square"></i> Facebook</a>
+                <a href="/cdn-cgi/l/email-protection#086b67667c696b7c4865616c6d6d7b7b6126677a6f" aria-label="Envoyer un email à MIDEESSI"><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="97f4f8f9e3f6f4e3d7fafef3f2f2e4e4feb9f8e5f0">[email&#160;protected]</span></a>
+            </div>
+            <p>&copy; <span id="current-year"></span> MIDEESSI. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js" defer></script>
+</body>
+</html>
+
