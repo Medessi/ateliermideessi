@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // Countdown Timer
-    const countdownDate = new Date("June 1, 2025 00:00:00").getTime();
+    const countdownDate = new Date("June 23, 2025 17:00:00").getTime();
 
     const timerInterval = setInterval(function() {
         const now = new Date().getTime();
