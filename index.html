@@ -831,6 +831,139 @@ footer {
   padding-top: 24px;
 }
 
+/* ── POPUP CONFIRMATION ─────────────────────────────── */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,40,0.75);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.popup-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popup-box {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 40px 36px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  transform: translateY(24px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+}
+
+.popup-overlay.show .popup-box {
+  transform: translateY(0) scale(1);
+}
+
+.popup-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, #191970, #252580);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  border: 4px solid var(--gold);
+}
+
+.popup-icon i {
+  color: var(--gold);
+  font-size: 28px;
+}
+
+.popup-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin-bottom: 12px;
+}
+
+.popup-sub {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.popup-sub strong { color: var(--navy); }
+
+.popup-detail {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--light);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 24px;
+}
+
+.popup-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.popup-detail-item i { color: var(--gold); font-size: 12px; }
+
+.popup-wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  background: #25D366;
+  color: white;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: background 0.2s;
+}
+
+.popup-wa:hover { background: #1da851; }
+.popup-wa i { font-size: 18px; }
+
+.popup-close {
+  width: 100%;
+  padding: 12px;
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--gray);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.popup-close:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+  background: var(--light);
+}
+
 /* ── BOUTON FLOTTANT WHATSAPP ───────────────────────── */
 .wa-float {
   position: fixed;
@@ -1182,7 +1315,25 @@ footer {
   <div class="wa-float-label">Participer à l'atelier</div>
 </a>
 
-<!-- AOS -->
+<!-- ── POPUP CONFIRMATION ── -->
+<div class="popup-overlay" id="popup-overlay">
+  <div class="popup-box">
+    <div class="popup-icon">
+      <i class="fas fa-check"></i>
+    </div>
+    <div class="popup-title">Inscription confirmée !</div>
+    <div class="popup-sub">Bienvenue dans la communauté MIDEESSI Learn. Tu seras contacté sur WhatsApp au <strong>+229 64 40 96 91</strong> très bientôt pour finaliser ton inscription.</div>
+    <div class="popup-detail">
+      <div class="popup-detail-item"><i class="fas fa-calendar-alt"></i> 28 Mars 2026</div>
+      <div class="popup-detail-item"><i class="fas fa-clock"></i> 14H – 17H</div>
+      <div class="popup-detail-item"><i class="fas fa-map-marker-alt"></i> St Antoine de Padoue</div>
+    </div>
+    <a href="https://wa.me/22964409691?text=Bonjour%20MIDEESSI%2C%20je%20viens%20de%20m%27inscrire%20à%20l%27atelier%20du%2028%20Mars%202026." target="_blank" class="popup-wa">
+      <i class="fab fa-whatsapp"></i> Confirmer sur WhatsApp
+    </a>
+    <button class="popup-close" id="popup-close">Fermer</button>
+  </div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 <script>
@@ -1232,6 +1383,22 @@ const form = document.getElementById('registration-form');
 const submitBtn = document.getElementById('submit-btn');
 const formAlert = document.getElementById('form-alert');
 const alertMsg = document.getElementById('alert-msg');
+const popupOverlay = document.getElementById('popup-overlay');
+const popupClose = document.getElementById('popup-close');
+
+function showPopup() {
+  popupOverlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function hidePopup() {
+  popupOverlay.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+popupClose.addEventListener('click', hidePopup);
+popupOverlay.addEventListener('click', (e) => { if (e.target === popupOverlay) hidePopup(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hidePopup(); });
 
 function validate(input) {
   const val = input.value.trim();
@@ -1263,13 +1430,12 @@ form.addEventListener('submit', function(e) {
 
   emailjs.sendForm('service_g6qpvd7', 'template_7kmvovg', form)
     .then(() => {
-      formAlert.className = 'form-alert success';
-      alertMsg.textContent = 'Inscription envoyée ! Tu seras contacté sur WhatsApp très bientôt.';
       form.reset();
+      showPopup();
     })
     .catch(err => {
       formAlert.className = 'form-alert error';
-      alertMsg.textContent = 'Une erreur est survenue. Réessaie ou contacte-nous sur WhatsApp.';
+      alertMsg.textContent = 'Une erreur est survenue. Réessaie ou contacte-nous sur WhatsApp au +229 64 40 96 91.';
       console.error(err);
     })
     .finally(() => {
