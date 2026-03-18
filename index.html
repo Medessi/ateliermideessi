@@ -831,6 +831,63 @@ footer {
   padding-top: 24px;
 }
 
+/* ── BOUTON FLOTTANT WHATSAPP ───────────────────────── */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  text-decoration: none;
+  filter: drop-shadow(0 8px 24px rgba(37,211,102,0.4));
+  transition: all 0.3s ease;
+}
+
+.wa-float:hover { transform: translateY(-3px); filter: drop-shadow(0 12px 32px rgba(37,211,102,0.5)); }
+.wa-float:hover .wa-float-label { max-width: 200px; opacity: 1; padding: 0 16px 0 12px; }
+
+.wa-float-icon {
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.wa-float-icon i { color: white; font-size: 26px; }
+
+.wa-float-label {
+  background: #25D366;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-radius: 28px 0 0 28px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  transition: all 0.35s ease;
+  margin-right: -28px;
+  padding: 0;
+  order: -1;
+}
+
+@media (max-width: 480px) {
+  .wa-float { bottom: 20px; right: 20px; }
+  .wa-float-icon { width: 50px; height: 50px; }
+  .wa-float-icon i { font-size: 22px; }
+}
+
 /* ── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 768px) {
   .fg-row { grid-template-columns: 1fr; gap: 0; }
@@ -917,7 +974,7 @@ footer {
             </div>
             <div class="fg">
               <label>WhatsApp *</label>
-              <input type="text" id="whatsapp" name="whatsapp" placeholder="+229 01 98 91 49 33" required>
+              <input type="text" id="whatsapp" name="whatsapp" placeholder="+229 64 40 96 91" required>
               <span class="err">Numéro requis</span>
             </div>
             <div class="fg">
@@ -1112,11 +1169,18 @@ footer {
   <div class="footer-tag">Nous Sommes Indépendants · Cotonou, Bénin</div>
   <div class="footer-links">
     <a href="https://www.facebook.com/MIDEESSI/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-    <a href="https://wa.me/22901640096" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://wa.me/22964409691?text=Bonjour%20MIDEESSI%2C%20je%20voudrais%20participer%20à%20l%27atelier%20du%2028%20Mars%202026." target="_blank"><i class="fab fa-whatsapp"></i> +229 64 40 96 91</a>
+    <a href="tel:+22964409691"><i class="fas fa-phone"></i> +229 64 40 96 91</a>
     <a href="mailto:contact@mideessi.com"><i class="fas fa-envelope"></i> Email</a>
   </div>
   <div class="footer-copy">&copy; <span id="current-year"></span> MIDEESSI. Tous droits réservés. — Nous Sommes Indépendants.</div>
 </footer>
+
+<!-- ── BOUTON FLOTTANT WHATSAPP ── -->
+<a class="wa-float" href="https://wa.me/22964409691?text=Bonjour%20MIDEESSI%2C%20je%20voudrais%20participer%20à%20l%27atelier%20du%2028%20Mars%202026." target="_blank" aria-label="Contacter MIDEESSI sur WhatsApp">
+  <div class="wa-float-icon"><i class="fab fa-whatsapp"></i></div>
+  <div class="wa-float-label">Participer à l'atelier</div>
+</a>
 
 <!-- AOS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
